@@ -2,18 +2,23 @@
 <head>
     <script type="text/javascript" src="/dist/vendor.js"></script>
     <script type="text/javascript" src="/dist/crossweb.js"></script>
-    <script type="text/javascript">        
+    <script type="text/javascript">
+        crossweb.initialize();
 
         function show(){
-            crossweb.initialize(document);//.getElementById('cwui'));
+            crossweb.show();
         }
         
+        function login(){
+            crossweb.login();
+        }
+
     </script>
 
 </head>
 <body>
     test    
-    <div id='cwui' >fff</div>
     <input type="button" value="show" onclick="show()">
+    <input type="button" value="login" onclick="login()">
 </body>
 </html>

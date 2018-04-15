@@ -20,7 +20,7 @@ module.exports = [{
     libraryTarget: 'umd'
   },
   plugins: [	  
-	  new webpack.ProvidePlugin({"$": "jquery", "jQuery": "jquery"}),
+	  new webpack.ProvidePlugin({"$": "jquery","jQuery": "jquery"}),
   ],
   optimization: {
 		splitChunks: {
@@ -39,7 +39,8 @@ module.exports = [{
 	  rules :[
 		  {test: /\.html$/, loader: "html-loader" },
 		  {test: /\.css$/, loaders: ["style-loader","css-loader"]},
-		  {test: /\.js$/, loaders: ["babel-loader"]}
+			{test: /\.js$/, loaders: ["babel-loader"]},
+			{test: /\.(jpe?g|png|gif)$/i,loader:"file-loader",  query:{name:'[name].[ext]', outputPath:'images/'}}
 	  ]	  
   },
   resolve: {	    
