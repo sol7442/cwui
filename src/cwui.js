@@ -17,9 +17,10 @@ define(function() {
     cwui.prototype.login = function (){
     
         const LoginForm = require('./form/login_form')
-        console.log(LoginForm);
-        
         this.form = new LoginForm();
+        console.log(this.form);
+        
+        this.form.initialize();
         this.form.show();
 
         console.log("form",this.form);
