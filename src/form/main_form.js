@@ -6,7 +6,6 @@ define(function() {
     const parent = new Form();;
     function main_form (name, className){        
         this.form = $("#cwui");        
-        
     }
 
     
