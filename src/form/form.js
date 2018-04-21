@@ -8,8 +8,7 @@ define(function() {
     }
 
     form.prototype.append = function (sub){
-        sub.initialize();
-        console.log("append >>",sub);
+        sub.initialize();        
         this.form.append(sub.form);
     }
     form.prototype.remove = function (sub){
