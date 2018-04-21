@@ -1,19 +1,28 @@
 define(function(){
-    const MainForm = require("./main_form");
+    'use strict';
+    
+    const MainForm    = require("./main_form");
+    const DialogForm = require("./dialog_form");    
+    const Banner = require("./context/banner");
+    const Title   = require("./context/title/title");
     
     function login_form (){
         this.name = "LoginForm";
-        this.count = 0;
+        this.html = require("../../res/html/login_form.html"); 
+        this.dialog = new DialogForm();
     }
     
 
     login_form.prototype = new MainForm();
-    login_form.prototype.initialize = function (){
-        MainForm.prototype.initialize.call(this);
-        console.log("LoginForm - initialize")
+    login_form.prototype.initialize = function (){        
+        MainForm.prototype.initialize.call(this); 
+        //this.dialog.initialize();
+
+        this.append(this.dialog);
+
+        var banner = new Banner();
+        this.dialog.append(banner);
         
-        const TilteLayer = require("./context/title/title");        
-        this.append(new TilteLayer());
     } 
 
     return login_form;

@@ -1,0 +1,10 @@
+.ini-overlay {
+    position: fixed; 
+ 	bottom:0px;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: Alpha(opacity=50);  /* support: IE8 */
+}

@@ -40,7 +40,7 @@ module.exports = [{
 		  {test: /\.html$/, loader: "html-loader" },
 		  {test: /\.css$/, loaders: ["style-loader","css-loader"]},
 			{test: /\.js$/, loaders: ["babel-loader"]},
-			{test: /\.(jpe?g|png|gif)$/i,loader:"file-loader",  query:{name:'[name].[ext]', outputPath:'images/'}}
+			{test: /\.(jpe?g|png|gif)$/i,loader:"file-loader",  query:{name:'[path][name].[ext]', outputPath:'images/'}}
 	  ]	  
   },
   resolve: {	    

@@ -1,28 +1,27 @@
 define(function() {
+    'use strict';
+    
     var form = function(){
-        this.name;
-        this.className;
-        this.form;
-        this.parent = null;
+        this.name;  
+        this.form ;
+        this.html ;
     }
 
-    form.prototype.addClass = function (className){
-        this.className = className;
-        this.form.addClass(this.className);
-    }
     form.prototype.append = function (sub){
-        console.log("form - ", this.form);
-        console.log("append - ", sub);
-        console.log("sub.name : ", sub.name)
-        this.form.append(sub.form,{id:sub.name,title:"ddddd",text:"testkkkkkk"});
-        this.form.append("<p>This is the default dialog which is useful for displaying informa</p>")
-
+        sub.initialize();
+        console.log("append >>",sub);
+        this.form.append(sub.form);
     }
     form.prototype.remove = function (sub){
 
     }
 
-    form.prototype.initialize; // abstract
+    form.prototype.initialize = function (){        
+        this.form = $(this.html);
+        this.form.attr("id",this.name);
+        console.log("initialize",this.form);
+    }
+       
 
     return form;
 })
