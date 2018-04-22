@@ -8,7 +8,7 @@ define(function(){
     const Banner        = require("./context/banner");
     const DeviceLayer   = require("./context/device/device_layer");
     const CommandLayer   = require("./context/command_layer");
-    const CertificateList   = require("./context/cert/certlist");
+    const CertificateLayer   = require("./context/cert/cert_layer");
 
     function login_form (){
         this.name = "LoginForm";
@@ -29,13 +29,13 @@ define(function(){
         this.banner = new Banner(this);
         this.device_layer  = new DeviceLayer(this);
         this.command_layer = new CommandLayer(this);
-        this.cert_list     = new CertificateList(this);
+        this.cert_layer     = new CertificateLayer(this);
 
         this.dialog.initialize();
 
         this.append(this.banner);
         this.append(this.device_layer);
-        this.append(this.cert_list);
+        this.append(this.cert_layer);
         this.append(this.command_layer);
 
         
