@@ -1,3 +1,6 @@
+body, h1, h2, h3, h4, h5, h6, input, select, textarea, button, pre{font-family:'맑은 고딕', 'Malgun Gothic', '돋움',dotum; line-height:1; color:#333; font-style:normal; letter-spacing: -1px;}
+
+
 .ini-overlay {
     position: fixed; 
  	bottom:0px;
@@ -7,4 +10,75 @@
     background: #000;
     opacity: 0.5;
     filter: Alpha(opacity=50);  /* support: IE8 */
+}
+
+.ini-device-layer{
+    width:100%;
+    height: 120px;
+}
+
+.ini-cert-list{
+    width:100%;
+    height: 80px;
+    background-color: yellowgreen;
+    opacity: 0.5;
+    filter: Alpha(opacity=50);  /* support: IE8 */
+}
+.ini-command-layer{
+    width:100%;
+    height: 80px;
+    background-color: yellow;
+    opacity: 0.5;
+    filter: Alpha(opacity=50);  /* support: IE8 */
+}
+
+.ini_section_title{
+    height: 24px;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ini-button-layer{
+    width:100%;
+}
+
+.ini-device-btn{
+    float: left;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ini-device-btn {
+    border-color: #4CAF50;
+    color: green;
+}
+
+.ini-device-btn:hover {
+    background-color: rgb(122, 76, 175);
+    color: white;
+}
+.ini-device-btn:active{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.ini-device-txt{
+    text-align: center;
+}
+.ini-device-img{
+    text-align: center;
+}
+.ini-selected-img{
+    position:absolute; 
+    top:11px; 
+    right:18px; 
+    overflow:hidden;  
+    width:20px; 
+    height:0; 
+    padding-top:20px;
 }
