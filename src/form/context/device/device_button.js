@@ -1,14 +1,23 @@
 define(function() {
     'use strict';
+    const Emitter = require('component-emitter');
     const Form = require("../../form");
+
+    const DeviceAdapter = require("../../../model/device_adapter");
+    
     var device_button = function (options){
         console.log(options)
         this.name = options["id"];
         this.text = options["text"];
-        this.html = require("../../../../res/html/device_button.html");        
+        this.html = require("../../../../res/html/device_button.html");   
+        this.emitter = new Emitter();     
+        this.device  = DeviceAdapter.create(this.name);
     }
     device_button.prototype = new Form();
+
+    device_button.prototype.click;
     device_button.prototype.initialize = function (){
+        var self = this;
         Form.prototype.initialize.call(this); 
 
         //
@@ -16,21 +25,18 @@ define(function() {
         console.log("text_elm",text_elm);
         text_elm.text(this.text);
 
-        var self = this;
-        
         // function mapping
+
+        this.emitter.on("onClick", self.click);
+
         this.form.click(function(){
-            OnClick(self.name);
+            //OnClick(self.name);
+            self.emitter.emit("onClick",self.device);
         });
     }   
 
-    device_button.prototype.click;
     
-    function OnClick (){
-        console.log("onClick    " , device_button);
-        
-    };
-
+   
 
 
 

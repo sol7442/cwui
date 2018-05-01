@@ -4,6 +4,7 @@
   "description": "initech inisafe crossweb ui for java 4.0.0",
   "main": "index.js",
   "dependencies": {
+    "component-emitter": "^1.2.1",
     "html-loader": "^0.5.5",
     "jquery": "^3.3.1",
     "jquery-ui": "^1.12.1",

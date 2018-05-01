@@ -2,31 +2,46 @@ define(function() {
     'use strict';
     const Form = require("../../form");
     const SectionTitle = require("../title/section_title");
-    const ButtonLayer = require("./button_layer");
+    const DeviceButton = require("./device_button");
+
+    var _this;
     var device_layer = function (){
         this.name = "DeviceLayer"
-        this.html = require("../../../../res/html/devicelayer.html");
+        this.html = "<div class='ini-device-layer'></div>";
         this.title;
-        this.button_layer;
+        this.buttons = [];
     }
     device_layer.prototype = new Form();
+    device_layer.prototype.selected;
+
     device_layer.prototype.initialize = function (){
+        _this = this;
         Form.prototype.initialize.call(this);   
         this.title = new SectionTitle(this);
         this.append(this.title);
         this.title.setTitle("인증서가 저장된 위치를 선택해주세요");
 
-        this.button_layer = new ButtonLayer(this);
-        this.append(this.button_layer);
 
-        this.button_layer.click = onClick;
-    }
-    device_layer.prototype.selected;
+        var hdd_button = new DeviceButton({id:"hdd",text:"하드디스크"});
+        hdd_button.click = OnClick;
+        
+        var usb_button = new DeviceButton({id:"usb",text:"이동식디스크"});
+        usb_button.click = OnClick;
 
-    function onClick(device){
-        console.log(device);
-        device_layer.selected();
+        this.append(hdd_button);
+        this.append(usb_button);
+
+        this.buttons.push(hdd_button);
+        this.buttons.push(usb_button);
+        
     }
+
+    function OnClick(device){
+        console.log("self",_this.selected);
+        device.save();
+    }
+
+
 
     return device_layer;
 });

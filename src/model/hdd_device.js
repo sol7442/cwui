@@ -1,6 +1,6 @@
 define(function() {
     'use strict';
-    const ExDevice = require('ex_device');
+    const ExDevice = require('./ex_device');
      var device = function (){
          this.id = "hdd";
      }
