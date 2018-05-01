@@ -39,8 +39,12 @@ define(function(){
         this.append(this.command_layer);
 
         
+        this.device_layer.selected = OnSelectDevice;
     } 
 
+    function OnSelectDevice(device){
+        device.isInstall();
+    }
     return login_form;
 
 })

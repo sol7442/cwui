@@ -18,6 +18,14 @@ define(function() {
 
         this.button_layer = new ButtonLayer(this);
         this.append(this.button_layer);
+
+        this.button_layer.click = onClick;
+    }
+    device_layer.prototype.selected;
+
+    function onClick(device){
+        console.log(device);
+        device_layer.selected();
     }
 
     return device_layer;

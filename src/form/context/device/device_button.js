@@ -20,9 +20,19 @@ define(function() {
         
         // function mapping
         this.form.click(function(){
-            console.log(self.name + " clicked.");
+            OnClick(self.name);
         });
-    }
+    }   
+
+    device_button.prototype.click;
+    
+    function OnClick (){
+        console.log("onClick    " , device_button);
+        
+    };
+
+
+
 
     return device_button;
 });
