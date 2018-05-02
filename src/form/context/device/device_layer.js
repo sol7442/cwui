@@ -36,8 +36,7 @@ define(function() {
         
     }
 
-    function OnClick(device){
-        console.log("self",_this.selected);
+    function OnClick(device){        
         device.save();
     }
 
