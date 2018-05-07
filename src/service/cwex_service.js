@@ -1,19 +1,23 @@
 define(function() {
     'use strict';
+    const cwex_service_url = "https://127.0.0.1:4441";
+
     var cwex_service = function (){        
     }    
-    cwex_service.prototype.call = function (url,request){
+    cwex_service.prototype.call = function (request){
+        console.log("request>>",request);
         var _data = "request="+ encodeURIComponent(JSON.stringify(request));
         return new Promise(function (resolve,reject){
             $.ajax({
                 method: "POST",
-                url: url,
+                url: cwex_service_url,
                 data: _data
             })
             .done(function (result){
                 resolve(result)
             })
             .fail(function (result){
+                console.log("result",result);
                 reject(reject);
             });
         });

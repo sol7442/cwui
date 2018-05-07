@@ -26,11 +26,9 @@ define(function() {
         text_elm.text(this.text);
 
         // function mapping
-
         this.emitter.on("onClick", self.click);
 
         this.form.click(function(){
-            //OnClick(self.name);
             self.emitter.emit("onClick",self.device);
         });
     }   

@@ -6,7 +6,6 @@ define(function() {
     const forge = require("node-forge");
 
     const cwex_service = require('../service/cwex_service');
-    const cwex_service_url = "https://localhost:4441";
 
     var device = function (){
          this.id;
@@ -30,7 +29,7 @@ define(function() {
             request.origin = "localhost:5001"      
             request.exfunc = exFunc;
             
-            cwex_service.call(cwex_service_url,request)
+            cwex_service.call(request)
             .then(function (response){
                 return pFactory.parsResponse(response);
             })

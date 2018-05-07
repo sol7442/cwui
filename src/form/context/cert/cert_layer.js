@@ -22,6 +22,11 @@ define(function() {
         this.table = new CertTable(this);
         this.append(this.table);
 
+
+        this.table.init_header();
+    }
+    cert_layer.prototype.setCertList = function (cert_list){
+        this.table.setData(cert_list);
     }
 
     return cert_layer;

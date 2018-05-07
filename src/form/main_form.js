@@ -20,6 +20,8 @@ define(function() {
        
        this.name = "MainForm";
        this.html = "<div class='ini-main-form'></div>";
+       this.device;
+       this.cert_layer;
     }
     main_form.prototype = new Form();
     main_form.prototype.initialize = function (){  
@@ -32,31 +34,39 @@ define(function() {
         var dialog = new DialogForm(this);
         var banner = new Banner(this);
         var device_layer  = new DeviceLayer(this);
+        device_layer.select = OnSelectDevice;
+
         var command_layer = new CommandLayer(this);
-        var cert_layer     = new CertificateLayer(this);
+        this.cert_layer     = new CertificateLayer(this);
 
         dialog.initialize();
 
+
         this.append(banner);
         this.append(device_layer);
-        this.append(cert_layer);
+        this.append(this.cert_layer);
         this.append(command_layer);
-        
-        device_layer.selected = OnSelectDevice;
         
         this.init = true;
     }
 
     main_form.prototype.show = function(){
-        console.log("show--")
-       // this.initialize();
+        console.log("show--");
     }
 
     main_form.prototype.hide = function(){
     }
 
     function OnSelectDevice(device){
-        console.log("selected device : ", device);
+        console.log("this>>",this);
+        this.device = device;
+        this.device.getCertList()
+        .then(function (cert_list){
+            this.cert_layer.setCertList(cert_list);
+        })
+        .catch(function (e){
+            console.log(e);
+        });
     }
 
     return main_form;
