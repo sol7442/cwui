@@ -5,6 +5,7 @@ define(function() {
         this.id = id;
     }
 
+    device.prototype.getCertList;
     device.prototype.save = function (){
 
         var args = {
@@ -48,19 +49,45 @@ define(function() {
         .done(function(data){
             console.log("data1",data);
             var res = JSON.parse(data);
-            var result = res["response"]["reply"]["reply"]["reply"];
+            var reply = res["response"]["reply"]["reply"]["reply"];
+            var result= decodeURIComponent(reply);
+            console.log("result",result);
 
-            var dec_res = decodeURI(result);
-            var pars = JSON.stringify(dec_res);
-            pars = decodeURI(pars);
-            pars = pars.replace(/%3A/gi,":");
-            pars = pars.replace(/%2C/gi,",");
+            var res_ = JSON.parse(result);
+            console.log("PARAMS",res_["PARAMS"]);
+
+            
+
+            
+            // var dec_res = decodeURIComponent(result +'');
+            // var pars = JSON.stringify(dec_res);
+            // pars = decodeURIComponent(pars+'');
+            // console.log("data21",pars);
+            // pars = pars.replace(/%3A/gi,":");
+            // pars = pars.replace(/%2C/gi,",");
+            // //pars = pars.replace(/\\/gi,":");
+            // pars = decodeURIComponent(pars+'');
+            // //var res_ = JSON.parse();
+
+            // console.log("data22",pars);
+
+            // var prs_res = JSON.stringify(dec_res);
+
+            // console.log("data23",result);
+            // console.log("data23",dec_res);
+            // console.log("data23",prs_res);
+
+            // var dec_res = decodeURI(result);
+            // var pars = JSON.stringify(dec_res);
+            // pars = decodeURI(pars);
+            // pars = pars.replace(/%3A/gi,":");
+            // pars = pars.replace(/%2C/gi,",");
          
-            //var dec_pars = decodeURI(pars);
+            // //var dec_pars = decodeURI(pars);
 
-            var res_ = JSON.parse(pars);
+            // var res_ = JSON.parse(pars);
 
-            console.log("data23",res_);
+            // console.log("data23",res_);
             
           
             

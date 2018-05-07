@@ -1,10 +1,9 @@
 define(function() {
     'use strict';
 
-    
-
+    const MainForm = require('./form/main_form')    
     var cwui = function (){
-        this.form;
+        this.form = new MainForm();
     }
 
     cwui.prototype.initialize = function (){
@@ -15,16 +14,9 @@ define(function() {
             document.body.append(cwui_element);            
         });
     }
-    cwui.prototype.login = function (){
-    
-        const LoginForm = require('./form/login_form')
-        this.form = new LoginForm();
-        console.log(this.form);
-        
+    cwui.prototype.login = function (){       
         this.form.initialize();
         this.form.show();
-
-        console.log("form",this.form);
     }
 
     return cwui;

@@ -37,7 +37,13 @@ define(function() {
     }
 
     function OnClick(device){        
-        device.save();
+        device.getCertList()
+        .then(function (cert_list){
+            console.log(cert_list);
+        })
+        .catch(function (e){
+            console.log(e);
+        });
     }
 
 

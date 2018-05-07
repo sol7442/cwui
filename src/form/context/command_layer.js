@@ -11,6 +11,6 @@ define(function() {
     command_layer.prototype.initialize = function (){
         Form.prototype.initialize.call(this);   
     }
-
+    
     return command_layer;
 });

@@ -1,9 +1,10 @@
 define(function(){
     'use strict';
     
-    const DialogForm    = require("./dialog_form");    
+     
     const MainForm    = require("./main_form");
 
+    const DialogForm    = require("./dialog_form");   
     const Title         = require("./context/title/title");
     const Banner        = require("./context/banner");
     const DeviceLayer   = require("./context/device/device_layer");

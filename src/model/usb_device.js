@@ -7,7 +7,9 @@ define(function() {
  
      
      device.prototype = new ExDevice();
-     
+     device.prototype.getCertList = function(){
+         console.log("getCertList - not yet");
+     }
  
      return device;
  });

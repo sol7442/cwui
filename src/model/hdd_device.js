@@ -1,13 +1,12 @@
 define(function() {
     'use strict';
     const ExDevice = require('./ex_device');
-     var device = function (){
-         this.id = "hdd";
-     }
- 
+    var device = function (){
+         this.id = "HARD_DISK";
+    }
      
-     device.prototype = new ExDevice();
-     
+    device.prototype = new ExDevice();
+    
  
      return device;
  });

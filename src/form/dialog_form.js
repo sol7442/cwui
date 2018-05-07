@@ -2,7 +2,7 @@ define(function(){
     'use strict';
     
     //const Form    = require("./form");
-    const MainForm    = require("./main_form");
+    const Form    = require("./form");
     const OverLay = require("./context/overlay");
 
     function dialog_form (content){
@@ -14,11 +14,14 @@ define(function(){
     }
     
 
-    dialog_form.prototype = new MainForm();
+    dialog_form.prototype = new Form();
     dialog_form.prototype.initialize = function (){
-        MainForm.prototype.initialize.call(this);
+        Form.prototype.initialize.call(this);
         this.append(this.overlay);
         this.content.dialog();
+
+        
+
     } 
     
     return dialog_form;
