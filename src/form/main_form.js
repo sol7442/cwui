@@ -14,6 +14,7 @@ define(function() {
     const CertificateLayer   = require("./context/cert/cert_layer");
     
 
+    var cert_layer;
     function main_form (name, className){ 
        this.root = $("#cwui");
        this.init = false;
@@ -21,7 +22,6 @@ define(function() {
        this.name = "MainForm";
        this.html = "<div class='ini-main-form'></div>";
        this.device;
-       this.cert_layer;
     }
     main_form.prototype = new Form();
     main_form.prototype.initialize = function (){  
@@ -37,14 +37,14 @@ define(function() {
         device_layer.select = OnSelectDevice;
 
         var command_layer = new CommandLayer(this);
-        this.cert_layer     = new CertificateLayer(this);
+        cert_layer     = new CertificateLayer(this);
 
         dialog.initialize();
 
 
         this.append(banner);
         this.append(device_layer);
-        this.append(this.cert_layer);
+        this.append(cert_layer);
         this.append(command_layer);
         
         this.init = true;
@@ -62,7 +62,7 @@ define(function() {
         this.device = device;
         this.device.getCertList()
         .then(function (cert_list){
-            this.cert_layer.setCertList(cert_list);
+            cert_layer.setCertList(cert_list);
         })
         .catch(function (e){
             console.log(e);
