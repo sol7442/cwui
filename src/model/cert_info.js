@@ -22,11 +22,14 @@ define(function() {
         this.SIMPLE_ISSUER;
         this.SIMPLE_SUBJECT;
         this.SIMPLE_OIDNAME;
+        this.pemCert;
+        
     }
     cert_info.prototype.parsFromPem = function (pemCert){
         try{
             var _certInfo = forge.pki.certificateFromPem(pemCert);
 
+            this.pemCert = pemCert;
             this.SERIAL = _certInfo.serialNumber;
             this.SUBJECT_CN = forge.util.decodeUtf8(_certInfo.subject.getField('CN').value);
             this.SUBJECT = parsSubject(this.SUBJECT_CN);

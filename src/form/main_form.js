@@ -10,11 +10,16 @@ define(function() {
     const Title         = require("./context/title/title");
     const Banner        = require("./context/banner");
     const DeviceLayer   = require("./context/device/device_layer");
-    const CommandLayer   = require("./context/command_layer");
     const CertificateLayer   = require("./context/cert/cert_layer");
-    
+    const CommandLayer   = require("./context/command_layer");
+    const InputLayer   = require("./context/input/input_layer");
 
+    var banner_layer;
+    var device_layer;
     var cert_layer;
+    var command_layer;
+    var input_layer;
+
     function main_form (name, className){ 
        this.root = $("#cwui");
        this.init = false;
@@ -32,20 +37,24 @@ define(function() {
         this.root.append(this.form); 
 
         var dialog = new DialogForm(this);
-        var banner = new Banner(this);
-        var device_layer  = new DeviceLayer(this);
-        device_layer.select = OnSelectDevice;
 
-        var command_layer = new CommandLayer(this);
-        cert_layer     = new CertificateLayer(this);
+        banner_layer  = new Banner(this);
+        device_layer  = new DeviceLayer(this);
+        
+        command_layer   = new CommandLayer(this);
+        cert_layer      = new CertificateLayer(this);
+        input_layer     = new InputLayer(this);
 
         dialog.initialize();
 
 
-        this.append(banner);
+        device_layer.select = OnSelectDevice;
+
+        this.append(banner_layer);
         this.append(device_layer);
         this.append(cert_layer);
         this.append(command_layer);
+        this.append(input_layer);
         
         this.init = true;
     }
