@@ -41,10 +41,11 @@ define(function() {
                 };
             })
             .then(function (cert_list){
+                console.log(cert_list)
                 var result_cert_list = [];
                 for(var i=0; i<cert_list.length; i++ ){
                     var pemCert = decodeURIComponent(cert_list[i].CERT);
-                    var cert_info = new CertInfo(cert_list[i].CERTID);
+                    var cert_info = new CertInfo(decodeURIComponent(cert_list[i].CERT_ID));
                     cert_info.parsFromPem(pemCert);                
                     result_cert_list.push(cert_info);
                 }
