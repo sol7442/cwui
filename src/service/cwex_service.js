@@ -4,9 +4,16 @@ define(function() {
 
     var cwex_service = function (){        
     }    
-    cwex_service.prototype.call = function (request){
+    cwex_service.prototype.call = function (request,bEnc){
         console.log("request>>",request);
-        var _data = "request="+ encodeURIComponent(JSON.stringify(request));
+
+        var _data = "request=";
+        if(bEnc){
+            _data = _data + encodeURIComponent(JSON.stringify(request));
+        }else{
+            _data = _data + JSON.stringify(request);
+        }
+
         return new Promise(function (resolve,reject){
             $.ajax({
                 method: "POST",

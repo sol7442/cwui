@@ -10,13 +10,11 @@ define(function() {
     factory.prototype.createRequest = function (version){        
         var request = {
             id:forge.util.bytesToHex(forge.random.getBytesSync(32)),
-            tabid:"",
+            tabid:forge.util.bytesToHex(forge.random.getBytesSync(16)),
             module:"crosswebex",
             cmd:'native',
-            origin:"",
-            SESSIONID:"",
-            exfunc:{},
-            callback:"" 
+            origin:"",            
+            exfunc:{}
         }
         return request;
     }
