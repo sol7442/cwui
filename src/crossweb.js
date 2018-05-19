@@ -6,15 +6,15 @@ define(function() {
     const CrossWebEx = require('./cwex');
     
     var crossweb = function(){
-        if(!bowser.chrome){
+        if(bowser.chrome){
             this.delegate  = new CrossWebUi();
         }else{
             this.delegate  = new CrossWebEx();
         }
     }
 
-    crossweb.prototype.initialize = function(){           
-        this.delegate.initialize();
+    crossweb.prototype.initialize = function(options){           
+        this.delegate.initialize(options);
     }
 
     crossweb.prototype.login = function(){ 

@@ -9,7 +9,10 @@ module.exports = [{
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    'crossweb':'./src/crossweb.js',
+		'crossweb':'./src/crossweb.js',
+		'secure_input':'./src/model/secure_input.js',
+		'isec_borad':'./src/vender/secure_keybord.js',
+		'isec_pad'  :'./src/vender/secure_keypad.js',
     'polyfill':'babel-polyfill'
   },
   output: {

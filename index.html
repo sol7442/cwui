@@ -1,10 +1,13 @@
 <html>
 <head>
     <script type="text/javascript" src="/dist/vendor.js"></script>
-    <script type="text/javascript" src="/dist/crossweb.js"></script>
+    <script type="text/javascript" src="/dist/secure_input.js"></script>    
+    <script type="text/javascript" src="/dist/crossweb.js"></script>    
+    <script type="text/javascript" src="/dist/isec_borad.js"></script>
+    <script type="text/javascript" src="/dist/isec_pad.js"></script>
     <script type="text/javascript">
-        crossweb.initialize();
-
+        crossweb.initialize({keyboard:isec_borad,keypad:isec_pad});
+        
         function show(){
             crossweb.show();
         }
