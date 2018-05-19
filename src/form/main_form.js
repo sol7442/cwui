@@ -27,11 +27,13 @@ define(function() {
        this.name = "MainForm";
        this.html = "<div class='ini-main-form'></div>";
        this.device;
+       this.options;
     }
     main_form.prototype = new Form();
-    main_form.prototype.initialize = function (){  
+    main_form.prototype.initialize = function (options){  
         if(this.init) return;
 
+        this.options = options;
         Form.prototype.initialize.call(this);   
         
         this.root.append(this.form); 
