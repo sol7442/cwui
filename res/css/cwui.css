@@ -82,3 +82,19 @@ body, h1, h2, h3, h4, h5, h6, input, select, textarea, button, pre{font-family:'
     height:0; 
     padding-top:20px;
 }
+
+
+.ini-input-pwd input {
+    width: 85%;
+    height: 34px;
+    padding: 10px;    
+    border: 1;
+}
+
+.ini-input-pwd button {     
+    width: 10%;    
+    height: 34px;
+    padding: 10px;
+    cursor: pointer;
+    background: url(../img/color_identity_blue/ico_keyboard.png) no-repeat;
+}

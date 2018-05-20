@@ -16,13 +16,10 @@ define(function() {
             document.body.append(cwui_element);            
         });
 
-
-        console.log("SecureInput", SecureInput);
         var secure_input = SecureInput.getInstance();
         secure_input.regKeyBoard(options.keyboard);
         secure_input.regKeyPad(options.keypad);
-      
-        console.log("secure_input", secure_input);
+        
     }
     cwui.prototype.login = function (){       
         this.form.initialize(this.options);

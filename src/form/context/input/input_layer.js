@@ -2,7 +2,7 @@ define(function() {
     'use strict';
     const Form = require("../../form");
    
-    const PwdInput = require("./input_password");
+    const PwdInput = require("./input_form");
     var input_layer = function (parent){
         this.name = "InputLayer"
         this.html = "<div class='ini-input-layer'></div>"
