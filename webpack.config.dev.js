@@ -11,6 +11,7 @@ module.exports = [{
   entry: {
 		'crossweb':'./src/crossweb.js',
 		'secure_input':'./src/model/secure_input.js',
+		'ahnlab_keyboard':'./src/vender/ahnlab_keyboard.js',
 		'isec_borad':'./src/vender/secure_keybord.js',
 		'isec_pad'  :'./src/vender/secure_keypad.js',
     'polyfill':'babel-polyfill'

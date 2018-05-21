@@ -1,26 +1,20 @@
 define(function() {
     'use strict';
    
-    var instance;
     var secure_input = function (){
         this.KeyPad;
         this.KeyBoard;
     }
 
-    secure_input.prototype.regKeyPad = function (key_pad){
-        this.KeyPad = key_pad;
+    secure_input.prototype.check = function (){
+        return false;
     }
-    secure_input.prototype.regKeyBoard = function (key_bord){
-        this.KeyBoard = key_bord;
+    secure_input.prototype.getInput = function (input_id){
+        return "input_value";
     }
-
-    var getInstance = function (){
-        console.log("ceate...",instance);
-        if(instance == undefined){
-            instance = new secure_input();
-        }
-        return instance;
+    secure_input.prototype.setInput = function (input_id){
+        //return "input_value";
     }
 
-    return {getInstance:getInstance};
+    return secure_input;
 })

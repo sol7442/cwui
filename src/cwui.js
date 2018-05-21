@@ -2,7 +2,7 @@ define(function() {
     'use strict';
 
     const MainForm = require('./form/main_form')   
-    var SecureInput = require('./model/secure_input');
+    var SecureInputFactory = require('./model/secure_input_factory');
     
     var cwui = function (){
         this.form = new MainForm();
@@ -16,9 +16,9 @@ define(function() {
             document.body.append(cwui_element);            
         });
 
-        var secure_input = SecureInput.getInstance();
-        secure_input.regKeyBoard(options.keyboard);
-        secure_input.regKeyPad(options.keypad);
+        var input_factory = SecureInputFactory.getInstance();
+        input_factory.regKeyBoard(options.keyboard);
+        input_factory.regKeyPad(options.keypad);
         
     }
     cwui.prototype.login = function (){       

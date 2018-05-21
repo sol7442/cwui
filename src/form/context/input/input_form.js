@@ -2,7 +2,7 @@ define(function() {
     'use strict';
     const Form = require("../../form");   
     const SectionTitle = require("../title/section_title");
-    const SecureInput = require('../../../model/secure_input');
+    const SecureInputFactory = require('../../../model/secure_input_factory');
 
     var input_form = function (parent){
         this.name = "InputPassword"
@@ -17,7 +17,7 @@ define(function() {
         this.append(title);
         title.setTitle("인증서 암호를 입력해주세요");
 
-        var secure_input = SecureInput.getInstance();
+        var input_factory = SecureInputFactory.getInstance();
 
 
         var keybord_input  = $("<input type='password'/>");

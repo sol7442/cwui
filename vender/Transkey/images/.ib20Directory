@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Ib20>
+<directory directoryId="" directoryName="images" isSiteDirectory="" siteId="">
+<file fileId="EMPTY" fileName="back.png" fileType=""/>
+<file fileId="EMPTY" fileName="blank.png" fileType=""/>
+<file fileId="EMPTY" fileName="blank_over.gif" fileType=""/>
+<file fileId="EMPTY" fileName="crt_blank.png" fileType=""/>
+<file fileId="EMPTY" fileName="crt_blank_over.gif" fileType=""/>
+<file fileId="EMPTY" fileName="crt_multi.png" fileType=""/>
+<file fileId="EMPTY" fileName="crt_single.png" fileType=""/>
+<file fileId="EMPTY" fileName="fake.gif" fileType=""/>
+<file fileId="EMPTY" fileName="invisible.cur" fileType=""/>
+<file fileId="EMPTY" fileName="invisible.gif" fileType=""/>
+<file fileId="EMPTY" fileName="multi.png" fileType=""/>
+<file fileId="EMPTY" fileName="multi_s.png" fileType=""/>
+<file fileId="EMPTY" fileName="single.png" fileType=""/>
+<file fileId="EMPTY" fileName="single_s.png" fileType=""/>
+</directory>
+</Ib20>
