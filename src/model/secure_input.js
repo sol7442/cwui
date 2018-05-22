@@ -13,7 +13,7 @@ define(function() {
         return "input_value";
     }
     secure_input.prototype.setInput = function (input_id){
-        //return "input_value";
+        //return "input_value";//$ASTX2.addE2EObject(obj, 11);
     }
 
     return secure_input;

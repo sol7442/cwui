@@ -12,6 +12,8 @@ module.exports = [{
 		'crossweb':'./src/crossweb.js',
 		'secure_input':'./src/model/secure_input.js',
 		'ahnlab_keyboard':'./src/vender/ahnlab_keyboard.js',
+		'uni_keypad':'./src/vender/uni_keypad.js',
+		
 		'isec_borad':'./src/vender/secure_keybord.js',
 		'isec_pad'  :'./src/vender/secure_keypad.js',
     'polyfill':'babel-polyfill'
@@ -58,6 +60,12 @@ module.exports = [{
 	    watchOptions: {
 	      aggregateTimeout: 300,
 	      poll: 1000
-	    }
+			},
+			proxy: {
+				"/initech": {
+					target: "https://demo.initech.com:8111",
+					secure: false
+				}
+			}
   }
 }];

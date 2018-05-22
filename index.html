@@ -5,11 +5,21 @@
     <script type="text/javascript" src="/dist/crossweb.js"></script>    
     <script type="text/javascript" src="/dist/isec_borad.js"></script>
     <script type="text/javascript" src="/dist/isec_pad.js"></script>
+
+    <!-- uni keypad -->
+    <link rel="stylesheet" type="text/css" href="/vender/unikey/keypad/uniwebkey/css/uniwebkey_w2ui.css">
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/vender/unikey/keypad/uniwebkey/js/uniwebkey_sp_20161214.min.js"></script>
+    <script type="text/javascript" src="/vender/unikey/keypad/uniwebkey/js/uniwebkey_can_debug_20160812.min.js"></script>
+    <script type="text/javascript" src="/dist/uni_keypad.js"></script>
+
+    <!-- ahnlab keybord -->
     <script type="text/javascript" src="/vender/ahnlab/astx2.min.js"></script>
     <script type="text/javascript" src="/vender/ahnlab/astx2_custom.js"></script>
     <script type="text/javascript" src="/dist/ahnlab_keyboard.js"></script>
+
     <script type="text/javascript">
-        crossweb.initialize({keyboard:ahnlab_keyboard,keypad:isec_pad});
+        crossweb.initialize({keyboard:ahnlab_keyboard,keypad:uni_keypad});
         
         function show(){
             crossweb.show();

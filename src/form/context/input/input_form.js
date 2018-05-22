@@ -17,14 +17,20 @@ define(function() {
         this.append(title);
         title.setTitle("인증서 암호를 입력해주세요");
 
-        var input_factory = SecureInputFactory.getInstance();
-
-
+        
         var keybord_input  = $("<input type='password'/>");
         var keypad_input   = $("<button><span class='keypad'></span></button>");
+        keybord_input.attr("id","pwd");
 
         this.form.append(keybord_input);
         this.form.append(keypad_input);
+
+        var input_factory = SecureInputFactory.getInstance();
+        input_factory.KeyBoard.setInput(this.name);
+        keypad_input.click(function (){
+            console.log("--click",input_factory.KeyPad);
+            input_factory.KeyPad.show("id");
+        })
     }
 
 

@@ -13,6 +13,7 @@ define(function() {
     const CertificateLayer   = require("./context/cert/cert_layer");
     const CommandLayer   = require("./context/command_layer");
     const InputLayer   = require("./context/input/input_layer");
+    const SecureInputFactory = require('../model/secure_input_factory');
 
     var banner_layer;
     var device_layer;
@@ -59,6 +60,16 @@ define(function() {
         this.append(input_layer);
         
         this.init = true;
+
+        var button   = $("<button value='button'></button>");
+        this.form.append(button);
+        button.click (function (){
+
+            var input_factory = SecureInputFactory.getInstance();
+            input_factory.KeyBoard.getInput("InputPassword");
+
+            console.log("--cl-")
+        });
     }
 
     main_form.prototype.show = function(){
