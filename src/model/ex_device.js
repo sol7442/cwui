@@ -29,7 +29,7 @@ define(function() {
             request.origin = "localhost:5001"      
             request.exfunc = exFunc;
             
-            cwex_service.call(request)
+            cwex_service.call(request,true)
             .then(function (response){
                 return pFactory.parsResponse(response);
             })

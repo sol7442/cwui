@@ -15,6 +15,8 @@ define(function() {
 
         var pwd = new PwdInput(this);
         this.append(pwd);
+
+        return this;
     }
 
 

@@ -9,7 +9,6 @@ define(function(){
         this.name = "DialogForm";
         this.html = require("../../res/html/dialog.html"); 
         
-        this.overlay = new OverLay();
         this.content = content.form;
     }
     
@@ -17,11 +16,13 @@ define(function(){
     dialog_form.prototype = new Form();
     dialog_form.prototype.initialize = function (){
         Form.prototype.initialize.call(this);
-        this.append(this.overlay);
-        this.content.dialog();
-
         
-
+        var overlay = new OverLay();
+        this.append(overlay);
+        this.content.dialog({
+            width : '720',
+            height: '600'});
+        return this;    
     } 
     
     return dialog_form;

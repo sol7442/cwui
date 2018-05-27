@@ -10,6 +10,7 @@ define(function() {
     selection_title.prototype = new Form();
     selection_title.prototype.initialize = function (){
         Form.prototype.initialize.call(this);   
+        return this;
     }
     selection_title.prototype.setTitle = function (title){
         this.form.text(title);

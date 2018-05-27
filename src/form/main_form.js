@@ -11,7 +11,7 @@ define(function() {
     const Banner        = require("./context/banner");
     const DeviceLayer   = require("./context/device/device_layer");
     const CertificateLayer   = require("./context/cert/cert_layer");
-    const CommandLayer   = require("./context/command_layer");
+    const CommandLayer   = require("./context/cmd/command_layer");
     const InputLayer   = require("./context/input/input_layer");
     const SecureInputFactory = require('../model/secure_input_factory');
 
@@ -33,25 +33,18 @@ define(function() {
     main_form.prototype = new Form();
     main_form.prototype.initialize = function (options){  
         if(this.init) return;
-
-        this.options = options;
         Form.prototype.initialize.call(this);   
-        
         this.root.append(this.form); 
 
-        var dialog = new DialogForm(this);
-
-        banner_layer  = new Banner(this);
+        var dialog = new DialogForm(this).initialize();
+        banner_layer  = new Banner(this).initialize();
         device_layer  = new DeviceLayer(this);
-        
-        command_layer   = new CommandLayer(this);
-        cert_layer      = new CertificateLayer(this);
-        input_layer     = new InputLayer(this);
-
-        dialog.initialize();
-
+        cert_layer      = new CertificateLayer(this).initialize();
+        command_layer   = new CommandLayer(this).initialize();
+        input_layer     = new InputLayer(this).initialize();
 
         device_layer.select = OnSelectDevice;
+        device_layer.initialize();
 
         this.append(banner_layer);
         this.append(device_layer);
@@ -59,16 +52,15 @@ define(function() {
         this.append(command_layer);
         this.append(input_layer);
         
+        this.options = options;
+
         this.init = true;
 
         var button   = $("<button value='button'></button>");
         this.form.append(button);
         button.click (function (){
-
             var input_factory = SecureInputFactory.getInstance();
             input_factory.KeyBoard.getInput("InputPassword");
-
-            console.log("--cl-")
         });
     }
 

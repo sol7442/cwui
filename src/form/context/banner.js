@@ -9,6 +9,7 @@ define(function() {
     banner.prototype = new Form();
     banner.prototype.initialize = function (){
         Form.prototype.initialize.call(this);   
+        return this;
     }
 
     return banner;

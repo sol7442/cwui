@@ -9,7 +9,6 @@ define(function() {
     var device_layer = function (){
         this.name = "DeviceLayer"
         this.html = "<div class='ini-device-layer'></div>";
-        this.title;
         this.buttons = [];
          
     }
@@ -17,17 +16,19 @@ define(function() {
     device_layer.prototype.select;
 
     device_layer.prototype.initialize = function (){
-        Form.prototype.initialize.call(this);   
-        this.title = new SectionTitle(this);
-        this.append(this.title);
-        this.title.setTitle("인증서가 저장된 위치를 선택해주세요");
+        Form.prototype.initialize.call(this);  
 
-
-        var hdd_button = new DeviceButton({id:"hdd",text:"하드디스크"});
-        hdd_button.click = OnSelect;
+        var select_title = new SectionTitle(this).initialize();
+        select_title.setTitle("인증서가 저장된 위치를 선택해주세요");
+        this.append(select_title);
         
-        var usb_button = new DeviceButton({id:"usb",text:"이동식디스크"});
+        var hdd_button = new DeviceButton({id:"hdd",text:"하드디스크",img:"/res/img/icon/icon_disk1.png"});
+        hdd_button.click = OnSelect;
+        hdd_button.initialize();
+
+        var usb_button = new DeviceButton({id:"usb",text:"이동식디스크",img:"/res/img/icon/icon_disk2.png"});
         usb_button.click = OnSelect;
+        usb_button.initialize();
 
         this.append(hdd_button);
         this.append(usb_button);
@@ -38,6 +39,7 @@ define(function() {
         console.log("...",this.select)
         emitter.on("OnSelect", this.select);
         
+        return this;
     }
 
     function OnSelect(device){   

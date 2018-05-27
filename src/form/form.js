@@ -2,24 +2,25 @@ define(function() {
     'use strict';
     
     var form = function(){
-        this.name;  
-        this.form ;
+        this.id;
+        this.classname;          
         this.html ;
+        this.form ;
     }
-
+    form.prototype.initialize = function (){        
+        this.form = $(this.html);
+        this.form.attr("id",this.id);
+        this.form.attr("class",this.classname);
+        return this;
+    }
     form.prototype.append = function (sub){
-        sub.initialize();        
         this.form.append(sub.form);
     }
     form.prototype.remove = function (sub){
 
     }
 
-    form.prototype.initialize = function (){        
-        this.form = $(this.html);
-        this.form.attr("id",this.name);
-        console.log("initialize",this.form);
-    }
+   
        
 
     return form;

@@ -29,6 +29,8 @@ define(function() {
         });
 
         emitter.on("onSelect",this.select);
+
+        return this;
     }
     cert_table.prototype.setData = function (cert_list){
         certs = cert_list;
@@ -81,7 +83,7 @@ define(function() {
                 break;
             }
         }
-
+        console.log("selected_cert",selected_cert);
         emitter.emit("onSelect",selected_cert);
     }
 

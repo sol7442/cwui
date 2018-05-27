@@ -6,37 +6,36 @@ define(function() {
     const DeviceAdapter = require("../../../model/device_adapter");
     
     var device_button = function (options){
-        console.log(options)
-        this.name = options["id"];
+        this.id = options["id"];
         this.text = options["text"];
-        this.html = require("../../../../res/html/device_button.html");   
+        this.img  = options["img"];
+        this.html = "<div class='ini-device-btn'>"+
+                    "   <div class='ini-device-img'></div>"+
+                    "   <div class='ini-device-txt'></div>"+
+                    "</div>"
         this.emitter = new Emitter();     
-        this.device  = DeviceAdapter.create(this.name);
+        this.device  = DeviceAdapter.create(this.id);
     }
     device_button.prototype = new Form();
 
     device_button.prototype.click;
     device_button.prototype.initialize = function (){
-        var self = this;
         Form.prototype.initialize.call(this); 
 
-        //
-        var text_elm = this.form.find(".ini-device-txt");
-        console.log("text_elm",text_elm);
-        text_elm.text(this.text);
-
-        // function mapping
-        this.emitter.on("onClick", self.click);
-
+        var self = this;
+        var txt = this.form.find(".ini-device-txt");        
+        txt.prepend($('<p>',{text:this.text}));
+       
+        var img = this.form.find(".ini-device-img");
+        console.log("text_elm",img);
+        img.prepend($('<img>',{src:this.img}));
+        
+        this.emitter.on("onClick", this.click);
         this.form.click(function(){
             self.emitter.emit("onClick",self.device);
         });
+
+        return this;
     }   
-
-    
-   
-
-
-
     return device_button;
 });

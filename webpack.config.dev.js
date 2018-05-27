@@ -62,10 +62,10 @@ module.exports = [{
 	      poll: 1000
 			},
 			proxy: {
-				"/initech": {
-					target: "https://demo.initech.com:8111",
+				"/demo/**": {
+					target: "http://localhost:8080",
 					secure: false
-				}
+				},
 			}
   }
 }];
