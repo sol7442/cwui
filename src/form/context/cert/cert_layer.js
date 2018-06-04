@@ -20,10 +20,11 @@ define(function() {
         this.append(seceion_title);
         
         this.table = new CertTable(this).initialize();
+        this.table.init_header();
         this.table.select = OnSelectCert;
 
         this.append(this.table);
-        this.table.init_header();
+       
 
         return this;
     }

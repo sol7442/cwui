@@ -5,7 +5,8 @@ define(function() {
    
     var cmd_button = function (options){
         this.id = options["id"];
-        this.html = "<div class='ini-command-btn'>"
+        this.text = options["text"];
+        this.html = "<div class='ini-command-btn'></div>"
     }
 
     cmd_button.prototype = new Form();
@@ -14,7 +15,16 @@ define(function() {
         Form.prototype.initialize.call(this); 
         var self = this;
     console.log("cmd_button - initialize")
-        this.form.append("<button>ttttttt</button>");//.prepend($('<input>',{type:"button",value:"this.img"}));
+        var icon = $("<i></i>");
+        var button  = $("<button></button>");
+        icon.addClass("ini-icon-icon");
+        icon.attr("id",this.id);
+        
+        button.text("ini-command-txt");
+        button.text(this.text);
+
+        this.form.append(icon);
+        this.form.append(button);
 
         return this;
     }

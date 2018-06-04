@@ -24,13 +24,7 @@ body, h1, h2, h3, h4, h5, h6, input, select, textarea, button, pre{font-family:'
     opacity: 0.5;
     filter: Alpha(opacity=50);  /* support: IE8 */
 }
-.ini-command-layer{
-    width:100%;
-    height: 80px;
-    background-color: yellow;
-    opacity: 0.5;
-    filter: Alpha(opacity=50);  /* support: IE8 */
-}
+
 
 .ini_section_title{
     height: 24px;
@@ -89,7 +83,9 @@ body, h1, h2, h3, h4, h5, h6, input, select, textarea, button, pre{font-family:'
     height:0; 
     padding-top:20px;
 }
-
+.ini-cert-layer{
+    height: 160px;
+}
 
 .ini-input-pwd input {
     width: 85%;
@@ -104,4 +100,46 @@ body, h1, h2, h3, h4, h5, h6, input, select, textarea, button, pre{font-family:'
     padding: 10px;
     cursor: pointer;
     background: url(../img/color_identity_blue/ico_keyboard.png) no-repeat;
+}
+
+.ini-command-layer{
+    font-family:'맑은 고딕',
+    Dotum,
+    "돋움",
+    Helvetica,
+    AppleSDGothicNeo,
+    sans-serif;
+    font-size:12px;
+}
+.ini-command-btn{
+    float: right;
+    border : 0px;
+    padding: 1px;
+    margin: 1px;
+}
+.ini-command-btn button {
+    line-height: 0px;
+    
+}
+
+#bring .ini-icon-icon{
+    padding-left:17px;    
+    background:url(/res/img/icon/icon_bring.png)no-repeat;
+    height:13px;
+}
+
+#view .ini-icon-icon{
+    padding-left:17px;    
+    background:url(/res/img/icon/icon_01.png)no-repeat;
+    height:13px;
+}
+#del .ini-icon-icon{
+    padding-left:17px;    
+    background:url(/res/img/icon/icon_02.png)no-repeat;
+    height:13px;
+}
+#mgr .ini-icon-icon{
+    padding-left:17px;    
+    background:url(/res/img/icon/icon_set.png)no-repeat;
+    height:13px;
 }

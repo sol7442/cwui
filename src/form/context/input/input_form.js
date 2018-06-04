@@ -13,7 +13,7 @@ define(function() {
     input_form.prototype.initialize = function (){
         Form.prototype.initialize.call(this);   
 
-        var title = new SectionTitle(this);
+        var title = new SectionTitle(this).initialize();
         this.append(title);
         title.setTitle("인증서 암호를 입력해주세요");
 
@@ -31,6 +31,8 @@ define(function() {
             console.log("--click",input_factory.KeyPad);
             input_factory.KeyPad.show("id");
         })
+
+        return this;
     }
 
 

@@ -13,7 +13,7 @@ define(function() {
     input_layer.prototype.initialize = function (){
         Form.prototype.initialize.call(this);   
 
-        var pwd = new PwdInput(this);
+        var pwd = new PwdInput(this).initialize();
         this.append(pwd);
 
         return this;
